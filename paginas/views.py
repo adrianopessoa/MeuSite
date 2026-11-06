@@ -19,7 +19,7 @@ def sobre(request):
 
 def contato(request):
     return HttpResponse("<h1>Contato</h1>"
-                        "<p>E-mail: adrianopessoa17@gmail.com</p>"
+                        "<p>E-mail: adriano@email.com</p>"
                         "<a href = '/'>Inicio</a> | "
                         "<a href = '/sobre/'>Sobre</a>"
                         )
