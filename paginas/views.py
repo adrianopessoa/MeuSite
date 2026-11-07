@@ -5,10 +5,13 @@ from django.shortcuts import render
 from django.http import HttpResponse
 
 def inicio(request):
-    return HttpResponse("<h1>Olá! Este é o meu primeiro site</h1>"
-                        "<a href = 'contato/'>Contato</a> | "
-                        "<a href = '/sobre/'>Sobre</a>"
-                        )
+    dados = {
+        "nome" : "Adriano",
+        "idade" : 38,
+        "altura" : 1.76,
+        "pets" : ["pipoca", "mel"]        
+    }
+    return render(request, "inicio.html", dados)
 
 def sobre(request):
     return HttpResponse("<h1>Sobre mim</h1>"

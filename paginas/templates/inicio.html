@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Minha primeira página</title>
+</head>
+<body>
+    <h1>Olá Mundo!</h1>
+    <h2>Cazá Cazá Cazá!</h2>
+        <img src = "https://www.futbox.com/img/v1/c64/96f/803/8e1/6884ab0cd733ca344b32.png">
+    <p>Essa é uma página <strong>HTML</strong> feito por {{nome}}</p>
+    <p>Eu tenho {{idade}} anos e {{altura}}m de altura.</p>
+    <p>Eu não sou pai de:</p>
+    <ul>
+        {%for item in pets %}
+        <li>{{item}}</li>
+        {%endfor%}
+    </ul>
+    <ul>
+        <li>Operário x Sport</li>
+        <li>Sport x Goias</li>
+    </ul>
+    <h3>Links úteis</h3>
+    <ul>
+        <li><a href="https://sportrecife.com.br/">Site Oficial</a></li>
+        <li><a href="https://ge.globo.com/futebol/brasileirao-serie-b/">Campeonato</a></li>
+    </ul>
+        
+    <footer>O maior do norte e nordeste.</footer>
+</body>
+</html>
