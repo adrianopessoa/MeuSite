@@ -10,17 +10,20 @@
     <h2>Cazá Cazá Cazá!</h2>
         <img src = "https://www.futbox.com/img/v1/c64/96f/803/8e1/6884ab0cd733ca344b32.png">
     <p>Essa é uma página <strong>HTML</strong> feito por {{nome}}</p>
-    <p>Eu tenho {{idade}} anos e {{altura}}m de altura.</p>
-    <p>Eu não sou pai de:</p>
+    <p>Eu sou de {{cidade}}.</p>
+    <p>Eu tenho os seguintes cursos:</p>
     <ul>
-        {%for item in pets %}
+        {%for item in curso %}
         <li>{{item}}</li>
         {%endfor%}
     </ul>
+    <p>Meus hobbies são:</p>
     <ul>
-        <li>Operário x Sport</li>
-        <li>Sport x Goias</li>
+        {%for item in hobbies %}
+        <li>{{item}}</li>
+        {%endfor%}
     </ul>
+    
     <h3>Links úteis</h3>
     <ul>
         <li><a href="https://sportrecife.com.br/">Site Oficial</a></li>
