@@ -24,3 +24,9 @@ def contato(request):
         "telefone" : "(81) 99999-8888"
     }
     return render(request, "contato.html", contexto)
+
+def projetos(request):
+    contexto ={
+        "proj" : ["Calculadora em Python", "Biblioteca com classes", "Meu site em Django"]
+    }
+    return render(request, "projetos.html", contexto)

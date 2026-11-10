@@ -1,0 +1,10 @@
+{% extends "base.html" %}
+{% block conteudo %}
+<h2>Meus Projetos</h2>
+<ul>
+    {% for item in proj %}
+    <li>{{item}}</li>
+    {% endfor %}
+</ul>
+
+{% endblock %}
