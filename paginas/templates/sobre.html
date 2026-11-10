@@ -1,0 +1,10 @@
+{% extends "base.html "%}
+{% block conteudo %}
+    <h2>Sobre min</h2>
+    <p>Olá, sou Adriano e moro em {{cidade}}. Tenho os seguintes hobbies:</p>
+    <ul>
+        {% for item in hobbies %}
+        <li>{{item}}</li>
+        {% endfor %}
+    </ul>
+{% endblock %}
