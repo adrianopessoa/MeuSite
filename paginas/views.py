@@ -14,7 +14,7 @@ def inicio(request):
 def sobre(request):
     contexto = {
         "cidade" : "Brasil",
-        "hobbies" : ["Futebol", "Video Game", "Assistir Séries"],
+        "hobbies" : ["Música", "Futebol", "Jogos", "Séries"],
     }
     return render(request, "sobre.html", contexto)
 

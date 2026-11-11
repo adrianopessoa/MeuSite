@@ -1,26 +1,30 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Meu Site</title>
-    <style>
-        body { font-family: Arial, sans-serif; margin: 10px; }
-        header { background: #cf2121;
-            color: rgb(0, 0, 0); padding: 5px; }
-        nav a { color: #FFD43B; }
-        footer { color: gray; margin-top: 30px; }
-    </style>
+    <link rel = "stylesheet"
+        href = "{% static 'css/estilo.css' %}">
 </head>
 <body>
     <header>
-        <h1>Meu Site</h1>
-        <nav>
-            <a href="/">Início</a> |
-            <a href="/sobre/">Sobre</a> |
-            <a href="/contato/">Contato</a> |
-            <a href="/projetos/">Projetos</a>
-        </nav>
+        <div class="text-esquerda">
+            <h1>
+                Meu Site
+            </h1>
+            <nav>
+                <a href="/">Início</a>
+                <a href="/sobre/">Sobre</a>
+                <a href="/contato/">Contato</a>
+                <a href="/projetos/">Projetos</a>
+            </nav>
+            
+        </div>
+        <div class="image-direita">
+            <img : src = "https://www.futbox.com/img/v1/c64/96f/803/8e1/6884ab0cd733ca344b32.png" width="125" height="75">
+        </div>
     </header>
     <main>
         {% block conteudo %}
@@ -28,8 +32,7 @@
     </main>
     <footer>
         <p>Feito por Adriano</p>
-
-        <img src = "https://www.futbox.com/img/v1/c64/96f/803/8e1/6884ab0cd733ca344b32.png" width="150" height="100">
+        <img src = "https://www.gifservice.fr/img/gif-vignette-large/b4b5238e820e1ef06803134ae751f41a/583126-sport-club-do-recife-pernambuco-brazil-soccer-club-america-logo-sports.gif" width="125" height="75">
     </footer>
 </body>
 </html>
