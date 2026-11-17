@@ -38,4 +38,4 @@ def musicas(request):
     contexto ={
         "album": Album.objects.all(),
     }
-    return render(request, "musica.html", contexto)
+    return render(request, "musicas.html", contexto)
