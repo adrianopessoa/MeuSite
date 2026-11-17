@@ -5,8 +5,9 @@
     Estes são os projetos que fiz. O <span class="destaque">mais recente</span> é o site!</p>
 <ul>
     {% for item in proj %}
-    <li class = "cartao">{{item}}</li>
+    <li class = "cartao">{{item.nome}}</li>
     {% endfor %}
 </ul>
+
 
 {% endblock %}

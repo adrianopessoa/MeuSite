@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% block conteudo %}
+<h2>Músicas</h2>
+<p>
+    Esses são os álbuns que eu curto:
+</p>
+<ul>
+    {% for item in album %}
+    <li class = "cartao">
+        <strong>{{item.titulo}}</strong>
+        ({{item.ano}})<br>
+        {{item.genero}}
+    </li>
+    {% endfor %}
+</ul>
+
+{% endblock %}

@@ -4,6 +4,9 @@ from django.shortcuts import render
 
 from django.http import HttpResponse
 
+from .models import Album
+from .models import Projetos
+
 def inicio(request):
     contexto = {
         "nome" : "Adriano",
@@ -27,6 +30,12 @@ def contato(request):
 
 def projetos(request):
     contexto ={
-        "proj" : ["Calculadora em Python", "Biblioteca com classes", "Meu site em Django"]
+        "proj" : Projetos.objects.all()
     }
     return render(request, "projetos.html", contexto)
+
+def musicas(request):
+    contexto ={
+        "album": Album.objects.all(),
+    }
+    return render(request, "musica.html", contexto)
