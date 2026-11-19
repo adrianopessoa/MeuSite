@@ -1,4 +1,5 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
+from .forms import ProjetoForm
 
 # Create your views here.
 
@@ -44,3 +45,14 @@ def categoria(request):
         "categ" : Categoria.objects.all(),
     }
     return render(request, "categorias.html", contexto)
+
+def novo_projeto(request):
+    if request.method == "POST":
+        form = ProjetoForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return redirect("/projetos/")
+    else:
+        form = ProjetoForm()
+    return render(request, "novo_projeto.html",
+                  {"form": form})
