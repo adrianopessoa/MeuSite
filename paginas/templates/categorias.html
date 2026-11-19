@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+{% block conteudo %}
+<h2>Categorias</h2>
+{% for item in categ %}
+    <h3>{{item.nome}}</h3>
+    <ul>
+    {% for p in item.projetos_set.all %}
+        <li class = "cartao">{{p.nome}}</li>
+    {% endfor %}
+    </ul>
+{% endfor %}
+{% endblock %}

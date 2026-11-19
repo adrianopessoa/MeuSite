@@ -4,8 +4,7 @@ from django.shortcuts import render
 
 from django.http import HttpResponse
 
-from .models import Album
-from .models import Projetos
+from .models import Album, Categoria, Projetos
 
 def inicio(request):
     contexto = {
@@ -39,3 +38,9 @@ def musicas(request):
         "album": Album.objects.all(),
     }
     return render(request, "musicas.html", contexto)
+
+def categoria(request):
+    contexto ={
+        "categ" : Categoria.objects.all(),
+    }
+    return render(request, "categorias.html", contexto)
