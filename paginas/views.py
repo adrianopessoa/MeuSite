@@ -1,5 +1,5 @@
 from django.shortcuts import render, redirect
-from .forms import ProjetoForm
+from .forms import ProjetoForm, CategoriaForm, MusicaForm
 
 # Create your views here.
 
@@ -40,11 +40,33 @@ def musicas(request):
     }
     return render(request, "musicas.html", contexto)
 
+def nova_musica(request):
+    if request.method == "POST":
+        form = MusicaForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return redirect("/musicas/")
+    else:
+        form = MusicaForm()
+    return render(request, "novo_musica.html",
+                    {"form": form})
+
 def categoria(request):
     contexto ={
         "categ" : Categoria.objects.all(),
     }
     return render(request, "categorias.html", contexto)
+
+def nova_categoria(request):
+    if request.method == "POST":
+        form = CategoriaForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return redirect("/categorias/")
+    else:
+        form = CategoriaForm()
+    return render(request, "nova_categoria.html",
+                  {"form": form})
 
 def novo_projeto(request):
     if request.method == "POST":
@@ -56,3 +78,4 @@ def novo_projeto(request):
         form = ProjetoForm()
     return render(request, "novo_projeto.html",
                   {"form": form})
+
