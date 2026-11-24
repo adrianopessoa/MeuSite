@@ -5,7 +5,7 @@
     <strong>{{ projeto.nome }}</strong>?</p>
 <form method="post">
     {% csrf_token %}
-    <button type="submit">Sim, excluir</button>
+    <button type="submit" class="botao botao-vermelho">Sim, excluir</button>
     <a href="/projetos/{{ projeto.id }}/">Cancelar</a>
 </form>
 {% endblock %}
