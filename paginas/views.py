@@ -1,4 +1,4 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, get_object_or_404
 from .forms import ProjetoForm, CategoriaForm, MusicaForm
 
 # Create your views here.
@@ -76,6 +76,27 @@ def novo_projeto(request):
             return redirect("/projetos/")
     else:
         form = ProjetoForm()
-    return render(request, "novo_projeto.html",
-                  {"form": form})
+    return render(request, "novo_projeto.html", {"form": form})
 
+def detalhe_projeto(request, id):
+    projeto = get_object_or_404(Projetos, id=id)
+    return render(request, "detalhe_projeto.html", 
+                  {"projeto": projeto})
+
+def editar_projeto(request, id):
+    projeto = get_object_or_404(Projetos, id=id)
+    if request.method == "POST":
+        form = ProjetoForm(request.POST, instance=projeto)
+        if form.is_valid():
+            form.save()
+            return redirect("/projetos/")
+    else:
+        form = ProjetoForm(instance=projeto)
+    return render(request, "novo_projeto.html", {"form": form})
+
+def excluir_projeto(request, id):
+    projeto = get_object_or_404(Projetos, id=id)
+    if request.method == "POST": 
+        projeto.delete()
+        return redirect("/projetos/") 
+    return render(request, "excluir_projeto.html", {"projeto": projeto})

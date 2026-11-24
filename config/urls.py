@@ -28,5 +28,8 @@ urlpatterns = [
     path('musicas/', views.musicas),
     path('projetos/novo/', views.novo_projeto),
     path('categorias/novo/', views.nova_categoria),
-    path('musicas/novo/', views.nova_musica)
+    path('musicas/novo/', views.nova_musica),
+    path('projetos/<int:id>/', views.detalhe_projeto),
+    path('projetos/<int:id>/editar/', views.editar_projeto),
+    path('projetos/<int:id>/excluir/', views.excluir_projeto),
 ]

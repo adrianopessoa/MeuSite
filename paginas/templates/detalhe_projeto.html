@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+{% block conteudo %}
+<h1>{{ projeto.nome }}</h2>
+<p>{{ projeto.descricao }}</p>
+<p>Ano: {{ projeto.ano }}</p>
+<p>Categoria: 
+    {{ projeto.categoria.nome }}
+</p>
+<a href="/projetos/{{ projeto.id }}/editar/">Editar</a>
+<a href="/projetos/{{ projeto.id }}/excluir/">Excluir</a>
+<a href="/projetos/">Voltar</a>
+{% endblock %}
