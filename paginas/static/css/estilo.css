@@ -64,3 +64,22 @@ footer {
 }
 
 .destaque { color: #771405; font-weight: bold; }
+
+.botao {
+     padding: 6px 12px;
+    border-radius: 6px;
+    color: white;
+    text-decoration: none;
+}
+
+.botao-azul { 
+    background: #1a5fb4; 
+}
+
+.botao-vermelho { 
+    background: #c01c28; 
+}
+
+.botao-laranja {
+    background: #f86502;
+}

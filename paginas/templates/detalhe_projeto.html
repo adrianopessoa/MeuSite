@@ -6,7 +6,8 @@
 <p>Categoria: 
     {{ projeto.categoria.nome }}
 </p>
-<a href="/projetos/{{ projeto.id }}/editar/">Editar</a>
-<a href="/projetos/{{ projeto.id }}/excluir/">Excluir</a>
-<a href="/projetos/">Voltar</a>
+
+<a href="/projetos/{{ projeto.id }}/editar/" class="botao botao-azul" >Editar</a>
+<a href="/projetos/{{ projeto.id }}/excluir/" class="botao botao-vermelho">Excluir</a>
+<a href="/projetos/" class="botao botao-laranja">Voltar</a>
 {% endblock %}
